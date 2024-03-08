@@ -1,7 +1,5 @@
-<li class=list-group-item>
-    <h2>
-       la {{appareilName}} {{appareils}} est {{appareilStatut}} 
-    </h2>
-    <input type='text' [(ngModel)]='appareils'>
-    <button class= 'btn btn-success' [disabled]=!isAuth (click)='onAppareilAllumer()'>alumer {{appareilName}}</button>
+
+<li class='list-group-item'> 
+    appareil:{{val}} --- statut: {{Appareils[0].appareilStatut}}
+ <p><input [(ngModel)]='val'> </p>
 </li>

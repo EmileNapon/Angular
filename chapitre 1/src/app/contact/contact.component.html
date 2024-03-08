@@ -1,0 +1,21 @@
+<ul class='list-group' *ngFor='let j of infos'> 
+    <li class='list-group-item' >{{j.last_name}} {{j.second_name}}</li> 
+</ul>
+
+
+
+
+
+
+
+
+
+
+<ul class='list-group' *ngFor='let j of infos'>
+    <div class='dispo'> 
+     <li class='list-group-item' >{{j.last_name}} {{j.second_name}}</li> 
+     <li class='list-group-item' id='li' *ngIf='j.last_name=="NAPON"'>{{comments[1].message}} ---{{comments[1].date}}</li> 
+     <li class='list-group-item' id='li' *ngIf='j.last_name=="KABORE"'>{{comments[0].message}} ---{{comments[0].date}}</li> 
+    </div> 
+ </ul>
+ <button btn btn-success (click)="onAffiche()"> afficher </button>
