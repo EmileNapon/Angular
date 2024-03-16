@@ -1,6 +1,10 @@
 <div class="container">
-    <div class='col-xs-12'>
     <div class='row'>
-    <contact-root></contact-root>
+        <div class='col-xs-12'>
+            <div class="list-group">
+                <appareil-root></appareil-root>
+            </div>
+            <button class= 'btn btn-success' [disabled]='!isAuth' (click)='onToutAllumer()'>tout allumer</button>
+        </div>
     </div>
-</div></div>
+</div>

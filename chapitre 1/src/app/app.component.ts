@@ -7,13 +7,12 @@ import { Component, Input} from '@angular/core';
 })
 export class AppComponent {Title=[{title:''}]
   isAuth=false;
-  
-  appareilOne=''
+
   
  constructor(){
   setTimeout(()=>{this.isAuth=true}, 5000)
  }
-  onToutAllumer(){
-    console.log('tout est allumer')
+ onToutAllumer(){
+    console.log('tous allume')
   }
 }

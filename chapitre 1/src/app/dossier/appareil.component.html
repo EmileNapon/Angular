@@ -1,5 +1,8 @@
 
-<li class='list-group-item'> 
-    appareil:{{val}} --- statut: {{Appareils[0].appareilStatut}}
- <p><input [(ngModel)]='val'> </p>
-</li>
+    <li *ngFor='let appareil of appareils' > 
+
+        <p style='width:20px; height:20px; background-color:red;' *ngIf="appareil.appareilStatut === 'eteint'" ></p>
+        <p [ngStyle]='{color:getColor(appareil.appareilStatut)}'>appareil:{{appareil.appareilName}} 
+            --- statut: {{appareil.appareilStatut}}</p> 
+        <input [(ngModel)]='appareil.appareilName'> 
+    </li>

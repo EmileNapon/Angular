@@ -7,13 +7,19 @@ import {Component, Input} from '@angular/core';
 })
 
 export class AppareilComponent {
+  
    
-    @Input() Appareils=[{
-        appareilName:'machine a laver',
+    appareils=[{
+        appareilName:'Machine a laver',
+        appareilStatut:'allume'
+         },{
+        appareilName:'Television',
+        appareilStatut:'allume'
+        },{
+        appareilName:'Ordinateur',
         appareilStatut:'eteint'
-        
-    }]
-
-   @Input() val=''
-
+    }]   
+getColor(v:string){
+     if(v=='eteint'){return 'red';} else if( v=="allume"){return "green"} else{return ''}}
 }
+
