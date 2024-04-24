@@ -1,10 +1,13 @@
 <div class="container">
-    <div class='row'>
-        <div class='col-xs-12'>
-            <div class="list-group">
-                <appareil-root></appareil-root>
-            </div>
-            <button class= 'btn btn-success' [disabled]='!isAuth' (click)='onToutAllumer()'>tout allumer</button>
-        </div>
+    <div class="list-group">
+<span><a routerLink='/appareil'> appareil</a><a  id='po' routerLink='/contact'>Contact</a><a  id='po' routerLink='/fo'>Contact</a></span>
+        <br/><br/>
     </div>
+    <div > 
+       <button class= 'btn btn-primary' [disabled]='!isAuth' (click)='ngToutAllumer()'>tout allumer</button>
+       <button  class= 'btn btn-danger' [disabled]='!isAuth' (click)='ngToutEteindre()'>tout eteindre</button>
+    </div>
+<router-outlet></router-outlet>
 </div>
+    
+

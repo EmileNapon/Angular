@@ -1,14 +1,21 @@
-import { Pipe, PipeTransform}  from '@angular/core'
-@Pipe({
-    name:'replacecomma'
-})
-export class replaceCommaPipe implements PipeTransform{
+import { Component}  from '@angular/core'
 
-transform(value: any):string {
-    if(!!value){
-        return value.replace(/,/g, ".");
-    }else{
-        return '';
-    }
-}
+@Component({
+  selector:'contact',
+  templateUrl:'./contact.component.html'  
+})
+export class ContactComponent{
+    constructor(){}
+
+    comments=[
+        {name:'napon',prenom:'Emile',message:'bjr', date:new Date()},
+        {name:'kabore',prenom:'Leticia',message:'oui bjr ! comment tu vas ?', date:new Date()},
+        {name:'napon',prenom:'Emile',message:'Oui ca va !', date:new Date()},
+    
+    ]
+
+personne=[
+    {name:'napon',prenom:'Emile'},
+    {name:'Kabore',prenom:'Leticia'}
+]
 }

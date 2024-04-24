@@ -1,4 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { AppareilService } from './service/appareil.service';
+import { CouleurAppareilComponent } from './service/couleur.appareil.service';
 
 @Component({
     selector: 'appareil-root',
@@ -6,20 +8,30 @@ import {Component, Input} from '@angular/core';
     styleUrls:['./appareil.component.css']
 })
 
-export class AppareilComponent {
-  
-   
-    appareils=[{
-        appareilName:'Machine a laver',
-        appareilStatut:'allume'
-         },{
-        appareilName:'Television',
-        appareilStatut:'allume'
-        },{
-        appareilName:'Ordinateur',
-        appareilStatut:'eteint'
-    }]   
-getColor(v:string){
-     if(v=='eteint'){return 'red';} else if( v=="allume"){return "green"} else{return ''}}
+export class AppareilComponent implements OnInit {
+    appareils:any[]=[]
+    appareils1:any[]=[]
+    isAuth=false
+    constructor(private service: AppareilService,  private servicecouleurAppareil: CouleurAppareilComponent){
+      setTimeout(()=>{this.isAuth=true},4000);
+    }
+
+    ngOnInit(): void {
+      this.appareils=this.service.contact;
+    }
+
+getCouleurText(statut: string){
+    return this.servicecouleurAppareil.getColorText(statut);
+  }
+  getCouleurClass(statut:string){
+    return this.servicecouleurAppareil.getColorClass(statut)
+  }
+  a(indice:number){
+    this.service.AllumerAppareil(indice);
+  }
+  e(indice:number){
+    this.service.eteindreAppareil(indice);
+  }
 }
+
 
