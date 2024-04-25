@@ -1,29 +1,28 @@
-import {Component} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-  
-import { FormsModule, ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-
-
+import {Component, OnInit} from '@angular/core';
+import { CommonModule } from '@angular/common';  
+import { ReactiveFormsModule,  FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
+import{User} from './users/user';
 @Component({
     selector:'forms',
     templateUrl:'./forms.html',
     standalone: true,
-    imports: [CommonModule, RouterOutlet, FormsModule, ReactiveFormsModule]
+    imports: [ ReactiveFormsModule,CommonModule ],
 })
-export class FormsComponent{
-    klform = new FormGroup({
-        name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        email: new FormControl('', [Validators.required, Validators.email]),
-        body: new FormControl('', Validators.required)
-      });
-        
-      get f(){
-        return this.klform.controls;
-      }
-        
-      submit(){
-        console.log(this.klform.value);
-      }
+export class FormsComponent implements OnInit {
+  userForm : any;
+  constructor(private build: FormBuilder,private user:User){}
+  ngOnInit(){
+    this.iniForm();
+  
+  }
+iniForm(){
+  this.userForm=this.build.group({
+    name:['',[Validators.required,Validators.minLength(3)]],
+    second_name:['',[Validators.required,Validators.minLength(5)]]
+  })}
 
+submit(){
+  console.log(this.userForm.value);
+  const valeurForm=this.userForm.value
+}
 }

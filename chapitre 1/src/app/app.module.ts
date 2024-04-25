@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import{AppareilComponent} from './dossier/appareil.component';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule } from '@angular/forms';
 import { AppareilService } from './dossier/service/appareil.service';
 import { CouleurAppareilComponent } from './dossier/service/couleur.appareil.service';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,7 +15,7 @@ const appRoutes:Routes=[{path:'contact',component:ContactComponent},{path:'appar
   declarations: [
     AppComponent,AppareilComponent, ContactComponent, HComponent
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes),
 
 ],
   providers: [AppareilService, CouleurAppareilComponent],
