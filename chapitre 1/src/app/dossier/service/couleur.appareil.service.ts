@@ -14,6 +14,11 @@ export class CouleurAppareilComponent{
         }else{return'';}
 
 }
-
-
+userq=[];
+add(us1:any){
+     this.userq=us1.push
+}
+add2(us2:any){
+    this.userq=us2.push
+}
 }
