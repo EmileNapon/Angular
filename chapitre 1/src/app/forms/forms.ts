@@ -14,10 +14,11 @@ export class FormsComponent implements OnInit {
   l=[]
   constructor(private build: FormBuilder, private us :CouleurAppareilComponent){}
   ngOnInit(){
-    this.l=this.us.userq
     this.iniForm();
+    this.us.uh1
+    this.us.uh2
+    this.us.ug
     
-  
   }
   
 iniForm(){
@@ -33,12 +34,17 @@ submit(){
     valeurForm['name'],valeurForm['second_name']
   )
   console.log(newus)
-this.us.add(newus)
-
+// this.us.add(valeurForm['name'])
+this.us.add1(valeurForm['name'])
+this.us.add2(valeurForm['second_name'])
   
 }
 j(){
-  console.log(this.l)
+  console.log(this.us.uh1)
+  console.log(this.us.uh2)
+  console.log(this.us.ug.name[2])
+  console.log(this.us.ug.second_name[2])
 }
+
  
 }

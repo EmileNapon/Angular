@@ -14,11 +14,17 @@ export class CouleurAppareilComponent{
         }else{return'';}
 
 }
-userq=[];
-add(us1:any){
-     this.userq=us1.push
+
+
+uh1=['']
+uh2=['']
+add1(us1:string){
+     this.uh1.push(us1)
+     
 }
 add2(us2:any){
-    this.userq=us2.push
+    this.uh2.push(us2)
 }
+ug={name:this.uh1, second_name:this.uh2}
 }
+    
