@@ -1,0 +1,14 @@
+<div class='container'>
+    <ul class='list-group' *ngFor='let appareil of appareils'>
+      <li class='list-group-item' >
+        <p [ngStyle]='{color:getColorService(appareil.appareilStatut)}'*ngIf='appareil.appareilStatut=="allume"'>
+        {{appareil.appareilName}} --{{appareil.appareilStatut}}
+        </p>
+        <p [ngStyle]='{color:getColorService(appareil.appareilStatut)}'*ngIf='appareil.appareilStatut=="eteint"'>
+        {{appareil.appareilName}} --{{appareil.appareilStatut}}
+        </p>
+      </li>
+    </ul>
+    <button class="btn btn-success" (click)='onToutAllumer()'>tout allumer</button>
+    <button class="btn btn-danger" (click)='ontToutEteindre()'>tout eteindre</button>
+</div>

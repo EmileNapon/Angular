@@ -1,24 +1,19 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import{AppareilComponent} from './dossier/appareil.component';
-import { FormGroup, FormsModule } from '@angular/forms';
-import { AppareilService } from './dossier/service/appareil.service';
-import { CouleurAppareilComponent } from './dossier/service/couleur.appareil.service';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { HComponent } from './contact/h';
-import { FormsComponent } from './forms/forms';
+import { AppareilComponent } from './appareils/appareils.component';
+import { PageAcceuil } from './pageAcceuil/pageAcceuil.component';
+import { AppareilService } from './appareils/appareilsService/appareils.service';
+import { ServiceColor } from './appareils/serviceColor/serviceColor';
 
-const appRoutes:Routes=[{path:'contact',component:ContactComponent},{path:'appareil/:id',component:AppareilComponent},{path:'fo',component:FormsComponent}]
+  const appRoutes:Routes=[{path:'home', component:AppComponent,children:[{path:'', component: PageAcceuil},{path:'appareils', component: AppareilComponent}]}]
 @NgModule({
   declarations: [
-    AppComponent,AppareilComponent, ContactComponent, HComponent
+    AppComponent, AppareilComponent,PageAcceuil
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes),
-
-],
-  providers: [AppareilService, CouleurAppareilComponent],
+  imports: [BrowserModule, RouterModule,RouterModule.forRoot(appRoutes)],
+  providers: [AppareilService,ServiceColor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
