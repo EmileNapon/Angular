@@ -3,8 +3,20 @@ export class AppareilService{
 public listappareils=[
     {appareilName:'Lumière', appareilStatut:'allume' },
     {appareilName:'climatisation',appareilStatut:'eteint'},
-     {appareilName:'ordinateur', appareilStatut:'eteint'}];
+    {appareilName:'ordinateur', appareilStatut:'eteint'}];
 
+allumeAppareil(index1:number){
+    if(this.listappareils[index1].appareilStatut=='eteint'){
+        this.listappareils[index1].appareilStatut='allume'
+    }
+
+}
+eteindreAppareil(index2:number){
+        if(this.listappareils[index2].appareilStatut=='allume'){
+        this.listappareils[index2].appareilStatut='eteint'
+    }
+
+}
  ToutAllume():void{
     for(let appareil of this.listappareils){
         if(appareil.appareilStatut=='eteint'){
@@ -18,6 +30,5 @@ public listappareils=[
             appareil.appareilStatut='eteint'
         }
 }
-
 }
 }

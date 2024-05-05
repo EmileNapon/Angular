@@ -1,6 +1,7 @@
 import{Component, OnInit} from '@angular/core'
 import { AppareilService } from './appareilsService/appareils.service'
 import { ServiceColor } from './serviceColor/serviceColor'
+import { FormBuilder, FormGroup } from '@angular/forms'
 
 @Component({
     selector:'appareil-root',
@@ -9,13 +10,14 @@ import { ServiceColor } from './serviceColor/serviceColor'
 
 export class AppareilComponent implements OnInit{
 
-    constructor(private appareilsService:AppareilService, private colorService: ServiceColor){
+    constructor(private appareilsService:AppareilService, private colorService: ServiceColor, private fb: FormBuilder){
 
     }
     public appareils:any
 
     ngOnInit(){
         this.appareils=this.appareilsService.listappareils
+        this.initForm()
     } 
 
    getColorService(color:string){
@@ -29,7 +31,30 @@ export class AppareilComponent implements OnInit{
    ontToutEteindre(){
     return this.appareilsService.ToutEteindre()
    }
+
+   allumeAppareilseul(index:number){
+      return this.appareilsService.allumeAppareil(index)
+   }
+
+   eteindreAppareilseul(index:number){
+    return this.appareilsService.eteindreAppareil(index)
+
+   }
    testConsole(){
     console.log(this.appareils)
    }
+
+   public myF!:FormGroup
+
+   initForm(){
+    this.myF=this.fb.group({
+        newAppareil:''
+    })
+   }
+
+onsubmit(){
+    console.log(this.myF.value)
+}
+
+
 }
