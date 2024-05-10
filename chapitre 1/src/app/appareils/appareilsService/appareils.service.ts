@@ -4,7 +4,7 @@ public listappareils=[
     {appareilName:'Lumière', appareilStatut:'allume' },
     {appareilName:'climatisation',appareilStatut:'eteint'},
     {appareilName:'ordinateur', appareilStatut:'eteint'}];
-
+newlistappareil=['']
 allumeAppareil(index1:number){
     if(this.listappareils[index1].appareilStatut=='eteint'){
         this.listappareils[index1].appareilStatut='allume'
@@ -30,5 +30,9 @@ eteindreAppareil(index2:number){
             appareil.appareilStatut='eteint'
         }
 }
+}
+
+add(newApp:any){
+    this.newlistappareil.push(newApp)
 }
 }

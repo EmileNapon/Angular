@@ -6,18 +6,18 @@ import { AppareilComponent } from './appareils/appareils.component';
 import { PageAcceuil } from './pageAcceuil/pageAcceuil.component';
 import { AppareilService } from './appareils/appareilsService/appareils.service';
 import { ServiceColor } from './appareils/serviceColor/serviceColor';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
   const appRoutes:Routes=[
-    {path:'', component:PageAcceuil ,children:[
-      {path:'home', component: AppComponent},
+    {path:'', component:PageAcceuil },
+    {path:'home', component: AppComponent,children:[
       {path:'appareils', component: AppareilComponent}]}]
 
 @NgModule({
   declarations: [
     AppComponent, AppareilComponent,PageAcceuil
   ],
-  imports: [BrowserModule, RouterModule,RouterModule.forRoot(appRoutes), FormsModule],
+  imports: [BrowserModule, RouterModule,RouterModule.forRoot(appRoutes), FormsModule, ReactiveFormsModule],
   providers: [AppareilService,ServiceColor],
   bootstrap: [AppComponent]
 })

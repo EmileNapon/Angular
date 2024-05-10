@@ -14,10 +14,12 @@ export class AppareilComponent implements OnInit{
 
     }
     public appareils:any
+    public app:any
 
     ngOnInit(){
         this.appareils=this.appareilsService.listappareils
         this.initForm()
+       this.app= this.appareilsService.newlistappareil
     } 
 
    getColorService(color:string){
@@ -51,10 +53,14 @@ export class AppareilComponent implements OnInit{
         newAppareil:''
     })
    }
+   
+   onsubmit(){
+      const val=this.myF.value  
+      this.appareilsService.add(val['newAppareil'])
+      console.log(val['newAppareil'])
+   }
 
-onsubmit(){
-    console.log(this.myF.value)
-}
+
 
 
 }
