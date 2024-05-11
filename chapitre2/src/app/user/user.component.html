@@ -1,7 +1,21 @@
 <div class='container' *ngFor='let user of listUser'>
     <ul class=list-group >
         <li class='list-group-item'>
-            {{user.user_name}} {{user.user_second_name}}
+            <form [formGroup]='myF' (ngSubmit)='onSubmit()' >
+                <div class='FormGroup' >
+                <label for='contenu'>{{user.user_name}} {{user.user_second_name}}</label>
+                <input type='text' class='form-control' formControlName='contenu' id='contenu' placeholder='entrer le message'>
+                </div>
+                <div class='FormGroup'>
+                    <select type='text' class='form-control' formControlName='ch'>
+                      <option value=' Napon'>Napon</option>
+                      <option value=' Nacro'>Nacro</option>
+                      <option value=' Kabore'>Kabore</option>
+                      <option value=' Some'>Some</option>
+                    </select>
+                </div>
+                <button class='btn btn-success' type='submit' >Envoie</button>
+            </form>
         </li>
     </ul>
 </div>

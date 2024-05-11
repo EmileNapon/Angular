@@ -7,6 +7,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { MessageComponent } from './Message/message.component';
 import { MessageService } from './Message/messageService/messageService';
 import { PageAcceuil } from './pageAcceuil/pageAcceuil.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes:Routes=[{path:'',component:PageAcceuil},
 {path:'home',component:AppComponent,children:[{path:'user', component:UserComponent},
@@ -16,7 +17,7 @@ const routes:Routes=[{path:'',component:PageAcceuil},
   declarations: [
     PageAcceuil,AppComponent,UserComponent,MessageComponent
   ],
-  imports: [BrowserModule,RouterModule.forRoot(routes), RouterModule],
+  imports: [BrowserModule,RouterModule.forRoot(routes), RouterModule, ReactiveFormsModule],
   providers: [UserService, MessageService],
   bootstrap: [AppComponent]
 })
