@@ -1,17 +1,69 @@
-<div class='container' *ngFor='let user of listUser'>
+<div class='container' >
     <ul class=list-group >
         <li class='list-group-item'>
-            <form [formGroup]='myF' (ngSubmit)='onSubmit()' >
+            <form [formGroup]='myFNapon' (ngSubmit)='onSubmitNapon()' >
                 <div class='FormGroup' >
-                <label for='contenu'>{{user.user_name}} {{user.user_second_name}}</label>
+                <label for='contenu'>Napon Emile</label>
                 <input type='text' class='form-control' formControlName='contenu' id='contenu' placeholder='entrer le message'>
                 </div>
                 <div class='FormGroup'>
                     <select type='text' class='form-control' formControlName='ch'>
-                      <option value=' Napon'>Napon</option>
-                      <option value=' Nacro'>Nacro</option>
-                      <option value=' Kabore'>Kabore</option>
-                      <option value=' Some'>Some</option>
+                      <option value='Napon'>Napon</option>
+                      <option value='Nacro'>Nacro</option>
+                      <option value='Kabore'>Kabore</option>
+                      <option value='Some'>Some</option>
+                    </select>
+                </div>
+                <button class='btn btn-success' type='submit' >Envoie</button>
+            </form>
+        </li>
+
+        <li class='list-group-item'>
+            <form [formGroup]='myFNacro' (ngSubmit)='onSubmitNacro()' >
+                <div class='FormGroup' >
+                <label for='contenu'>Nacro Parfait</label>
+                <input type='text' class='form-control' formControlName='contenu' id='contenu' placeholder='entrer le message'>
+                </div>
+                <div class='FormGroup'>
+                    <select type='text' class='form-control' formControlName='ch'>
+                      <option value='Napon'>Napon</option>
+                      <option value='Nacro'>Nacro</option>
+                      <option value='Kabore'>Kabore</option>
+                      <option value='Some'>Some</option>
+                    </select>
+                </div>
+                <button class='btn btn-success' type='submit' >Envoie</button>
+            </form>
+        </li>
+        <li class='list-group-item'>
+            <form [formGroup]='myFKabore' (ngSubmit)='onSubmitKabore()' >
+                <div class='FormGroup' >
+                <label for='contenu'>Kabore Leticia</label>
+                <input type='text' class='form-control' formControlName='contenu' id='contenu' placeholder='entrer le message'>
+                </div>
+                <div class='FormGroup'>
+                    <select type='text' class='form-control' formControlName='ch'>
+                      <option value='Napon'>Napon</option>
+                      <option value='Nacro'>Nacro</option>
+                      <option value='Kabore'>Kabore</option>
+                      <option value='Some'>Some</option>
+                    </select>
+                </div>
+                <button class='btn btn-success' type='submit' >Envoie</button>
+            </form>
+        </li>
+        <li class='list-group-item'>
+            <form [formGroup]='myFSome' (ngSubmit)='onSubmitSome()' >
+                <div class='FormGroup' >
+                <label for='contenu'>Some Nebenaon</label>
+                <input type='text' class='form-control' formControlName='contenu' id='contenu' placeholder='entrer le message'>
+                </div>
+                <div class='FormGroup'>
+                    <select type='text' class='form-control' formControlName='ch'>
+                      <option value='Napon'>Napon</option>
+                      <option value='Nacro'>Nacro</option>
+                      <option value='Kabore'>Kabore</option>
+                      <option value='Some'>Some</option>
                     </select>
                 </div>
                 <button class='btn btn-success' type='submit' >Envoie</button>
