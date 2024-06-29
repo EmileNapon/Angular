@@ -1,0 +1,7 @@
+{
+    "products":[{"id":1,"name":"pc", "price":3000, "checked":true},
+                {"id":1,"name":"pc", "price":1100, "checked":true},
+                {"id":1,"name":"pc", "price":100, "checked":true},
+                {"id":1,"name":"pc", "price":9999, "checked":false},
+                {"id":1,"name":"pc", "price":3000, "checked":false}]
+}
