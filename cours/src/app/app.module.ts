@@ -16,8 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     {path:'', component: Home},
     {path:'products', component: Products},
     {path:'newProduct', component: newProduct}]
-
-
+     
 @NgModule({
   declarations: [AppComponent,Home,Products,newProduct],
   imports:[BrowserModule, RouterModule,RouterModule.forRoot(appRoutes), HttpClientModule, ReactiveFormsModule],
@@ -25,4 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
 
