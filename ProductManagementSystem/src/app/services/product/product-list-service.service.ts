@@ -1,9 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Product } from 'src/app/product/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductListServiceService {
 
-  constructor() { }
+  constructor( private http: HttpClient ) { }
+
+  apiUrl='http://localhost:3000/products'
+
+getData(): Observable<Array<Product>>{
+  return this.http.get<Array<Product>>(this.apiUrl)
+}
+
 }
