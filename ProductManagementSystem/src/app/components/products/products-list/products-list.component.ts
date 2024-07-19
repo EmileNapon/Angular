@@ -7,17 +7,19 @@ import { ProductListServiceService } from 'src/app/services/product/product-list
   styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent implements OnInit{
- n:number[]=[]
-  public listProducts:Array<any>=[]
-    constructor(private sr: ProductListServiceService ){}
+  listProducts: Array<any>=[]
+  constructor(private sr:ProductListServiceService){
 
-  ngOnInit(): void {
-
-    this.getDb() 
   }
-  getDb(){
+  ngOnInit() {
+    this.getData()
+  }
+  getData(){
     this.sr.getData().subscribe({
       next:data=>{ this.listProducts=data}, error:err=>{console.error('kkkk')}
+      
     })
+    
   }
+
 }

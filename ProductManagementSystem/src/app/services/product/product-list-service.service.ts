@@ -10,10 +10,10 @@ export class ProductListServiceService {
 
   constructor( private http: HttpClient ) { }
 
-  apiUrl='http://localhost:3000/products'
+  apiUrl="http://localhost:3000/products"
 
-getData(): Observable<Array<Product>>{
-  return this.http.get<Array<Product>>(this.apiUrl)
+getData(): Observable<Product[]>{
+  return this.http.get<Product[]>(this.apiUrl)
 }
 
 }
